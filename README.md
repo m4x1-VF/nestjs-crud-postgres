@@ -1,8 +1,8 @@
-# NestJS CRUD - MySQL
+# NestJS CRUD - Postgres
 
 ## Description
 
-This is a simple NestJS CRUD application that uses the [NestJS TypeORM](https://docs.nestjs.com/techniques/database) module to connect to a MySQL database. The database is hosted in a docker container. JSON Web Tokens (JWT) are used to allow users to register on your platform and access their accounts securely.
+This is a simple NestJS CRUD application that uses the [NestJS TypeORM](https://docs.nestjs.com/techniques/database) module to connect to a Postgres database. The database is hosted in a docker container. JSON Web Tokens (JWT) are used to allow users to register on your platform and access their accounts securely.
 
 ## Installation
 
@@ -38,15 +38,8 @@ $ npm run test:cov
 
 ## Endpoints
 
-- ### Cats
+- [Swagger documentation](http://localhost:3000/docs)
 
-  - GET - http://localhost:3000/api/v1/cats
-  - GET - http://localhost:3000/api/v1/cats/1
-  - POST - http://localhost:3000/api/v1/cats
-  - PATCH - http://localhost:3000/api/v1/cats/1
-  - DELETE - http://localhost:3000/api/v1/cats/1
+## Deploy
 
-- ### Breed
-
-  - GET - http://localhost:3000/api/v1/breed
-  - POST - http://localhost:3000/api/v1/breed
+- [Render](https://nest-crud-postgres-bqg4.onrender.com)

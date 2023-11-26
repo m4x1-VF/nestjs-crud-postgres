@@ -12,13 +12,29 @@ import { CreateBreedDto } from './dto/create-breed.dto';
 import { UpdateBreedDto } from './dto/update-breed.dto';
 import { Auth } from '../auth/decorators/auth.decorator';
 import { Role } from '../common/enums/rol.enum';
+import {
+  ApiBearerAuth,
+  ApiCreatedResponse,
+  ApiForbiddenResponse,
+  ApiTags,
+  ApiUnauthorizedResponse,
+} from '@nestjs/swagger';
 
-@Auth(Role.ADMIN)
+@ApiTags('Breed')
+@ApiBearerAuth()
+@ApiUnauthorizedResponse({
+  description: 'Unauthorized Bearer Auth',
+})
+@Auth(Role.USER)
 @Controller('breed')
 export class BreedController {
   constructor(private readonly breedService: BreedService) {}
 
   @Post()
+  @ApiCreatedResponse({
+    description: 'The record has been successfully created.',
+  })
+  @ApiForbiddenResponse({ description: 'Forbidden.' })
   create(@Body() createBreedDto: CreateBreedDto) {
     return this.breedService.create(createBreedDto);
   }
