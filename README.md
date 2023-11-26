@@ -38,7 +38,7 @@ $ npm run test:cov
 
 ## Endpoints
 
-- [Swagger documentation](http://localhost:3000/docs)
+- [Swagger documentation](https://nest-crud-postgres-bqg4.onrender.com/docs)
 
 ## Deploy
 
